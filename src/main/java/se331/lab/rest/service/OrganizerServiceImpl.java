@@ -17,8 +17,6 @@ public class OrganizerServiceImpl implements OrganizerService {
 
     @Override
     public Page<Organizer> getOrganizers(Integer pageSize, Integer page) {
-        pageSize = (pageSize == null || pageSize <= 0) ? 10 : pageSize;
-        page = (page == null || page < 0) ? 0 : page;
         return organizeDao.getOrganizers(pageSize, page);
     }
 

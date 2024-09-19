@@ -17,8 +17,6 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Page<Event> getEvents(Integer pageSize, Integer page) {
-        pageSize = (pageSize == null || pageSize <= 0) ? 10 : pageSize;
-        page = (page == null || page < 0) ? 0 : page;
         return eventDao.getEvents(pageSize, page);
     }
 
