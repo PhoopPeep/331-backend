@@ -1,16 +1,22 @@
 package se331.lab.rest.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import se331.lab.rest.entity.Event;
+import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.repository.EventRepository;
+import se331.lab.rest.repository.OrganizerRepository;
 
 @Component
 @RequiredArgsConstructor
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
-    final EventRepository eventRepository;
+    @Autowired
+    EventRepository eventRepository;
+    @Autowired
+    OrganizerRepository organizerRepository;
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         eventRepository.save(Event.builder()
@@ -49,5 +55,36 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("10.00 am.-6.00 pm.")
                 .petAllowed(true)
                 .organizer("Chiang Mai Municipality").build());
+        //Organization
+        organizerRepository.save(Organizer.builder()
+                .title("Cat Adoption Day")
+                .location("Meow Town")
+                .organizer("Kat Laydee")
+                .build());
+        organizerRepository.save(Organizer.builder()
+                .title("Community Gardening")
+                .location("Flora City")
+                .organizer("Fern Pollin")
+                .build());
+        organizerRepository.save(Organizer.builder()
+                .title("Beach Cleanup")
+                .location("Playa Del Carmen")
+                .organizer("Carey Wales")
+                .build());
+        organizerRepository.save(Organizer.builder()
+                .title("Book fair")
+                .location("Mars")
+                .organizer("Minions")
+                .build());
+        organizerRepository.save(Organizer.builder()
+                .title("Eating Day")
+                .location("Food land")
+                .organizer("Eats ma ru owi")
+                .build());
+        organizerRepository.save(Organizer.builder()
+                .title("Sleep")
+                .location("your bed")
+                .organizer("Fossil")
+                .build());
     }
 }

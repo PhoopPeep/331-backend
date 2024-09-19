@@ -11,8 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.service.EventService;
 
-import java.util.List;
-
 @Controller
 @RequiredArgsConstructor
 public class EventController {

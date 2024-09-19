@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import se331.lab.rest.dao.EventDao;
 import se331.lab.rest.entity.Event;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class EventServiceImpl implements EventService {
@@ -19,6 +17,8 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Page<Event> getEvents(Integer pageSize, Integer page) {
+        pageSize = (pageSize == null || pageSize <= 0) ? 10 : pageSize;
+        page = (page == null || page < 0) ? 0 : page;
         return eventDao.getEvents(pageSize, page);
     }
 
