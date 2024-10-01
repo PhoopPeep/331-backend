@@ -10,23 +10,13 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Event {
+public class Participant {
     @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
             @EqualsAndHashCode.Exclude
     Long id;
-    String category;
-    String title;
-    String description;
-    String location;
-    String date;
-    String time;
-    Boolean petAllowed;
-    @ManyToOne
-    Organizer organizer;
-    @ManyToMany(mappedBy = "eventHistory")
-    List<Participant> participants;
+    String name;
+    String telNo;
+    @ManyToMany
+    List<Event> eventHistory;
 }
-
-

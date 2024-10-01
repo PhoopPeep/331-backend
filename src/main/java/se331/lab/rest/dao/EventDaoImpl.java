@@ -28,7 +28,6 @@ public class EventDaoImpl implements EventDao {
                 .date("January 28, 2022")
                 .time("12:00")
                 .petAllowed(true)
-                .organizer("Kat Laydee")
                 .build());
         eventList.add(Event.builder()
                 .id(456L)
@@ -39,7 +38,6 @@ public class EventDaoImpl implements EventDao {
                 .date("March 14, 2022")
                 .time("10:00")
                 .petAllowed(true)
-                .organizer("Fern Pollin")
                 .build());
         eventList.add(Event.builder()
                 .id(789L)
@@ -50,7 +48,6 @@ public class EventDaoImpl implements EventDao {
                 .date("July 22, 2022")
                 .time("11:00")
                 .petAllowed(false)
-                .organizer("Carey Wales")
                 .build());
         eventList.add(Event.builder()
                 .id(111L)
@@ -61,7 +58,6 @@ public class EventDaoImpl implements EventDao {
                 .date("April 30, 2222")
                 .time("13:00")
                 .petAllowed(true)
-                .organizer("Minions")
                 .build());
         eventList.add(Event.builder()
                 .id(112L)
@@ -72,7 +68,6 @@ public class EventDaoImpl implements EventDao {
                 .date("July 31, 2024")
                 .time("12:00")
                 .petAllowed(true)
-                .organizer("Eats ma ru owi")
                 .build());
         eventList.add(Event.builder()
                 .id(113L)
@@ -83,7 +78,6 @@ public class EventDaoImpl implements EventDao {
                 .date("Now")
                 .time("All the time")
                 .petAllowed(true)
-                .organizer("Fossil")
                 .build());
     }
 
